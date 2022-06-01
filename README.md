@@ -5,3 +5,9 @@
 + React
 + MySql 8
 + Spring Data JPA
+
+## 오류 해결
+
+1. Mysql 
+    + RuntimeError: Unable to execute command chcp.
+    + 해결방법 : Version downgrade [참고자료](https://uwgdqo.tistory.com/375)
