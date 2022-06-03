@@ -33,5 +33,13 @@ public class TodoRepository {
         return entityManager.createQuery("select m from TodoEntity m where m.writer = :writer ", TodoEntity.class)
                 .getResultList();
     }
-
+    public List<TodoEntity> deleteTodo(String str_id){
+        Long id= Long.parseLong(str_id);
+        TodoEntity todoEntity = entityManager.find(TodoEntity.class, id);
+        if(todoEntity != null){
+            entityManager.remove(todoEntity);
+        }
+        return entityManager.createQuery("select m from TodoEntity m", TodoEntity.class)
+                .getResultList();
+    }
 }

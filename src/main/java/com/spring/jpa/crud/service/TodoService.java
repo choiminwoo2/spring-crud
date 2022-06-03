@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -26,5 +28,11 @@ public class TodoService {
         return todo.getId();
 
     }
+
+    @Transactional
+    public List<TodoEntity> deleteTodo(String id){
+       return todoRepository.deleteTodo(id);
+    }
+
 
 }

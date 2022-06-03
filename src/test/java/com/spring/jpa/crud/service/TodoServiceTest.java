@@ -19,6 +19,8 @@ import javax.swing.*;
 import org.junit.jupiter.api.Assertions.*;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 //@DataJpaTest
 //@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ExtendWith(SpringExtension.class)
@@ -30,7 +32,6 @@ public class TodoServiceTest {
     @Autowired TodoRepository todoRepository;
 
     @Test
-    @Rollback(value = false)
     public void 할일작성() throws Exception{
         //given
         TodoEntity todoEntity = new TodoEntity();
@@ -39,12 +40,15 @@ public class TodoServiceTest {
         //when
         Long savedId = todoService.todoWrite(todoEntity);
         //then
-
         Assertions.assertEquals(todoEntity, todoRepository.findOne(savedId));
-
     }
     @Test
-    public void 글갯수() throws Exception{
-
+    public void 할일삭제() throws Exception{
+        //given
+        String id = "1";
+        //when
+        List<TodoEntity> list = todoService.deleteTodo(id);
+        //then
+        Assertions.assertEquals(list, todoRepository.findAll());
     }
 }
