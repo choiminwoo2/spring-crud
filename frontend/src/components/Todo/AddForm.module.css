@@ -1,0 +1,27 @@
+.form-size{
+    width: 40rem;
+    max-width: 95%;
+    text-align: center;
+}
+.form-controls{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin :2rem auto;
+    text-align: left;
+}
+
+.form-control label{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-control input{
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+}
