@@ -14,7 +14,7 @@ const AddTodo = () => {
       <button onClick={addBtnClickHandler}>목록 추가 열기</button>
     </div>
   ) : (
-    <Card> <AddForm /></Card>
+   <AddForm />
   );
 
   return State;
