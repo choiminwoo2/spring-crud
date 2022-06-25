@@ -42,4 +42,6 @@ public class TodoRepository {
         return entityManager.createQuery("select m from TodoEntity m", TodoEntity.class)
                 .getResultList();
     }
+
+
 }
