@@ -35,7 +35,6 @@ public class TodoServiceTest {
     public void 할일작성() throws Exception{
         //given
         TodoEntity todoEntity = new TodoEntity();
-        todoEntity.setWriter("choi");
         todoEntity.setContent("안녕하세요");
         //when
         Long savedId = todoService.todoWrite(todoEntity);

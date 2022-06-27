@@ -16,8 +16,9 @@ public class TodoRepository {
 
     private final EntityManager entityManager;
 
-    public void save(TodoEntity todo){
+    public int save(TodoEntity todo){
         entityManager.persist(todo);
+        return Integer.parseInt(todo.getId().toString());
     };
 
     public TodoEntity findOne(Long id){
@@ -29,17 +30,17 @@ public class TodoRepository {
                 .getResultList();
     }
 
-    public List<TodoEntity> findByWriter(String writer) {
-        return entityManager.createQuery("select m from TodoEntity m where m.writer = :writer ", TodoEntity.class)
-                .getResultList();
-    }
+//    public List<TodoEntity> findByWriter(String writer) {
+//        return entityManager.createQuery("select m from TodoEntity m where m.writer = :writer ", TodoEntity.class)
+//                .getResultList();
+//    }
     public List<TodoEntity> deleteTodo(String str_id){
         Long id= Long.parseLong(str_id);
         TodoEntity todoEntity = entityManager.find(TodoEntity.class, id);
         if(todoEntity != null){
             entityManager.remove(todoEntity);
         }
-        return entityManager.createQuery("select m from TodoEntity m", TodoEntity.class)
+        return entityManager.createQuery("select m from TodoEntity m",TodoEntity.class)
                 .getResultList();
     }
 
