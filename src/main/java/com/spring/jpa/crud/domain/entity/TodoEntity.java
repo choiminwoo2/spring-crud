@@ -21,10 +21,7 @@ public class TodoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "todo_id")
     private Long id;
-
-    @Column(length = 50, nullable = false)
-    private String writer;
-
+    
     @Column(length = 500, nullable = false)
     private String content;
 
