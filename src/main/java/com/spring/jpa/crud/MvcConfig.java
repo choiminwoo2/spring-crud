@@ -15,7 +15,7 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("http://localhost:3000")
                 .allowedHeaders("*")
-                .allowedMethods("GET","POST")
+                .allowedMethods("GET","POST","DELETE")
                 .allowCredentials(true)
                 .maxAge(CORS_MAX_TIME);
     }

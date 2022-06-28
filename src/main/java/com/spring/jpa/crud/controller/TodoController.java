@@ -38,6 +38,8 @@ public class TodoController {
 
     }
 
+
+
     @DeleteMapping("/delete/{id}")
     public Map<String,Object> deleteTodo(@PathVariable("id") String id){
         List<TodoEntity> list = todoRepository.deleteTodo(id);
